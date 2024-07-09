@@ -59,7 +59,8 @@ df['Completed Views'] = df['Completed Views'].astype(int)
 df['Date'] = pd.to_datetime(df['Date']).dt.date
 
 # Load package mapping CSV
-package_mapping = pd.read_csv("/Users/sachin/Downloads/MonitoringDashboard_SmartSpend/SmartSpendTestPackageMapping.csv")
+# package_mapping = pd.read_csv("/Users/sachin/Downloads/MonitoringDashboard_SmartSpend/SmartSpendTestPackageMapping.csv")
+package_mapping = pd.read_csv(Path(__file__).parent/'data/SmartSpendTestPackageMapping.csv')
 df = df.merge(package_mapping, left_on='packageId', right_on='TraditionalPackage', how='left').drop_duplicates()
 
 cols = ['Date', 'packageId','Impressions', 'Clicks', 'Completed Views','ctr', 'vcr']
