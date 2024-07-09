@@ -13,11 +13,11 @@ import numpy as np  # Needed for numerical operations
 st.title("SmartSpend Campaign Monitoring Dashboard")
 
 with st.sidebar:
-    st.header("Configuration")
+    st.header("File Uploader")
     uploaded_file = st.file_uploader("Choose a file")
 
 if uploaded_file is None:
-    st.info(" Upload a file through config", icon="ℹ️")
+    st.info(" Upload daily serving report through File Uploader", icon="ℹ️")
     st.stop()
 
 df = pd.read_csv(uploaded_file)
