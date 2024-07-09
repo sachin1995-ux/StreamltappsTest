@@ -42,7 +42,7 @@ df['Date'] = pd.to_datetime(df['Date']).dt.date
 package_ids = [9013, 9523, 9515, 9524, 9516, 9525, 9507, 9533, 9016, 9526]
 
 # Filter the DataFrame to include only the rows with packageId in the specified list
-filtered_df = df[df['packageId'].isin(package_ids)]
+df = df[df['packageId'].isin(package_ids)]
 
 # Load package mapping CSV
 # package_mapping = pd.read_csv("/Users/sachin/Downloads/MonitoringDashboard_SmartSpend/SmartSpendTestPackageMapping.csv")
