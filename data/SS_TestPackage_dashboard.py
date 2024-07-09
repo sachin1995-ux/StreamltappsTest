@@ -22,8 +22,8 @@ if uploaded_file is None:
 
 df = pd.read_csv(uploaded_file)
 # Convert 'Cost' and 'Revenue' to float after removing currency symbols
-df['Cost'] = df['Cost'].replace('[¤,]', '', regex=True).astype(float)
-df['Revenue'] = df['Revenue'].replace('[¤,]', '', regex=True).astype(float)
+df['Cost'] = df['Cost'].replace('[$,]', '', regex=True).astype(float)
+df['Revenue'] = df['Revenue'].replace('[$,]', '', regex=True).astype(float)
 
 # Calculate margin
 df['Margin'] = (df['Revenue'] - df['Cost']) / df['Revenue']
