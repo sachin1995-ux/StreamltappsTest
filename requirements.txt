@@ -4,3 +4,4 @@ plotly
 matplotlib
 numpy
 pyforest
+streamlit-authenticator
