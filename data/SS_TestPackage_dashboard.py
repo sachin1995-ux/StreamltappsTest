@@ -142,7 +142,7 @@ fig = px.bar(combined_df, x="Date", y="Impressions",
              color='Method', barmode='group',
              title="Daily Impression Comparison",
              # labels={"VCR": "Video Completion Rate (%)", "Date": "Date"},
-            # color_discrete_map={'Traditional': '#ffc63e', 'SmartSpend': '#F15B29'}, # Custom colors
+             color_discrete_map={'Traditional': '#ffc63e', 'SmartSpend': '#F15B29'}, # Custom colors
              hover_data={"Date": "|%B %d, %Y", "Impressions": True})
 
 st.plotly_chart(fig, use_container_width=True)
