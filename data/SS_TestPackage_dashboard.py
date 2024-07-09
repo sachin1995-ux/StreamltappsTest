@@ -48,9 +48,9 @@ df['Revenue'] = df['Revenue'].replace('[¤,]', '', regex=True).astype(float)
 df['Margin'] = (df['Revenue'] - df['Cost']) / df['Revenue']
 
 df = df.rename(columns={'Package ID': 'packageId', 'CTR': 'ctr', 'VCR': 'vcr'})
-df['Impressions'] = df['Impressions'].astype(int)
-df['Clicks'] = df['Clicks'].astype(int)
-df['Completed Views'] = df['Completed Views'].astype(int)
+df['Impressions'] = df['Impressions'].str.replace(',', '').astype(int)
+df['Clicks'] = df['Clicks'].str.replace(',', '').astype(int)
+df['Completed Views'] = df['Completed Views'].str.replace(',', '').astype(int)
 
 
 # Load your campaign data
