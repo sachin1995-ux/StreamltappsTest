@@ -158,6 +158,7 @@ fig = px.bar(combined_df, x="Date", y="ctr",
              color='Method', barmode='group',
              title="Daily CTR Comparison",
              labels={"CTR": "Click Through Rate (%)", "Date": "Date"},
+            color_discrete_map={'Traditional': '#ffc63e', 'SmartSpend': '#F15B29'}, # Custom colors
              hover_data={"Date": "|%B %d, %Y", "ctr": True})
 
 st.plotly_chart(fig, use_container_width=True)
@@ -176,6 +177,7 @@ fig = px.bar(combined_df, x="Date", y="vcr",
              color='Method', barmode='group',
              title="Daily VCR Comparison",
              labels={"VCR": "Video Completion Rate (%)", "Date": "Date"},
+            color_discrete_map={'Traditional': '#ffc63e', 'SmartSpend': '#F15B29'}, # Custom colors
              hover_data={"Date": "|%B %d, %Y", "vcr": True})
 
 st.plotly_chart(fig, use_container_width=True)
