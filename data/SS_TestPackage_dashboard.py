@@ -12,25 +12,6 @@ import numpy as np  # Needed for numerical operations
 
 st.title("SmartSpend Campaign Monitoring Dashboard")
 
-
-# def set_theme():
-#     theme = {
-#         "base": "light",
-#         "primaryColor": "#f63366",
-#         "backgroundColor": "#ffffff",
-#         "secondaryBackgroundColor": "#e0e0e0",
-#         "textColor": "#262730",
-#         "font": "sans serif"
-#     }
-    
-#     st.set_page_config(page_title="Dashboard", layout="wide", theme=theme)
-
-# set_theme()
-
-# package_selected = st.sidebar.selectbox("Select Package ID:", df["PackageID"].unique())
-# filtered_data = df[df["PackageID"] == package_selected]
-# st.write("Filtered Data", filtered_data)
-
 with st.sidebar:
     st.header("Configuration")
     uploaded_file = st.file_uploader("Choose a file")
@@ -57,6 +38,11 @@ df['Completed Views'] = df['Completed Views'].str.replace(',', '').astype(int)
 # df = pd.read_csv("/Users/sachin/Downloads/MonitoringDashboard_SmartSpend/SS_Packages_7_4_2024.csv")
 # df = pd.read_csv("/Users/sachin/Downloads/Serving_Report_7_8_2024.csv")
 df['Date'] = pd.to_datetime(df['Date']).dt.date
+
+package_ids = [9013, 9523, 9515, 9524, 9516, 9525, 9507, 9533, 9016, 9526]
+
+# Filter the DataFrame to include only the rows with packageId in the specified list
+filtered_df = df[df['packageId'].isin(package_ids)]
 
 # Load package mapping CSV
 # package_mapping = pd.read_csv("/Users/sachin/Downloads/MonitoringDashboard_SmartSpend/SmartSpendTestPackageMapping.csv")
