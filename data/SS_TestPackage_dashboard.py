@@ -274,7 +274,7 @@ def dashboard_page():
 
     # Display the plot in Streamlit
     st.plotly_chart(fig, use_container_width=True)
-    else:
+else:
         st.error("You are not logged in. Please login to view the dashboard.")
 
 # Page selection logic
