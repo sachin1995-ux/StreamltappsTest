@@ -95,19 +95,11 @@ def dashboard_page():
         graph_color_SS = st.sidebar.color_picker('Pick a color SmartSpend', '#F15B29')
     
         impression_threshold = st.sidebar.slider('Filter Impressions by Minimum Threshold', 0, 5000, 0)
-    
-    
-    
-        # uploaded_file = st.file_uploader("Upload your data CSV", type=["csv"])
-        # if uploaded_file is not None:
-        #     df = pd.read_csv(uploaded_file)
+
     
         # Filter data by selected date range if specified
         if date_range:
             df = df[(df['Date'] >= date_range[0]) & (df['Date'] <= date_range[1])]
-    
-        # # Package selector - allows selection of Traditional or SmartSpend package
-        # package_selected = st.selectbox("Select packageId:", df["TraditionalPackage"].unique())
     
         # # Find the corresponding SmartSpend package
         campaignName = df[df["TraditionalPackage"] == package_selected]['CampaignName'].iloc[0]
@@ -124,10 +116,6 @@ def dashboard_page():
         st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
         # st.markdown("<br><br><br>", unsafe_allow_html=True)  # Adds three line breaks for more space
     
-    
-        # st.write("Campaign Name :", campaignName)
-    
-    
         # Filter data
         filtered_traditional = df[(df["TraditionalPackage"] == package_selected) & (df["Impressions"] >= impression_threshold)]
         filtered_smartspend = df[(df["packageId"] == smartspend_package) & (df["Impressions"] >= impression_threshold)]
@@ -139,25 +127,10 @@ def dashboard_page():
         st.write("Filtered Data - SmartSpend Package", filtered_smartspend[cols])
     
     
-        # Data preparation
-        filtered_traditional['Date'] = pd.to_datetime(filtered_traditional['Date'])
-        filtered_smartspend['Date'] = pd.to_datetime(filtered_smartspend['Date'])
-    
-        dates = np.arange(len(filtered_traditional['Date']))  # Position index for each date
-        bar_width = 0.1  # Adjust this width based on your preference
-    
-    
-    
-        # Assuming the data preparation has already been done
         # Convert 'Date' to datetime if not already
         filtered_traditional['Date'] = pd.to_datetime(filtered_traditional['Date'])
         filtered_smartspend['Date'] = pd.to_datetime(filtered_smartspend['Date'])
     
-    
-    
-        # Calculate positions for bar and line graphs
-        dates = np.arange(len(filtered_traditional['Date']))  # Position index for each date
-        bar_width = 0.1  # Adjust this width based on your preference
     
     
         # Add a 'Method' column
@@ -274,7 +247,7 @@ def dashboard_page():
     
         # Display the plot in Streamlit
         st.plotly_chart(fig, use_container_width=True)
-else:
+    else:
         st.error("You are not logged in. Please login to view the dashboard.")
 
 # Page selection logic
