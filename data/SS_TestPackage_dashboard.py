@@ -34,10 +34,15 @@ def login_page():
     else:
         st.info('Please login to access the dashboard.')
 
-# Register New User Page
 def register_user_page():
     st.write("This is the Register New User Page")
-    # Registration logic here
+    try:
+        (email_of_registered_user, username_of_registered_user, name_of_registered_user) = authenticator.register_user(pre_authorization=False)
+        if email_of_registered_user:
+            st.success('User registered successfully')
+    except RegisterError as e:
+        st.error(e)
+
 
 # Dashboard Page
 def dashboard_page():
