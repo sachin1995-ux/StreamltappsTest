@@ -7,8 +7,7 @@ import numpy as np
 import streamlit_authenticator as stauth
 import hashlib
 
-pg = st.navigation([st.Page("data/Register New User.py"), 
-    st.Page("data/Login Page.py")])
+pg = st.navigation([st.Page("data/Register New User.py"), st.Page("data/Login Page.py")])
 
 pg.run()
 
