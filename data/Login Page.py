@@ -18,7 +18,7 @@ from streamlit_authenticator.utilities.exceptions import (CredentialsError,
                                                           ResetError,
                                                           UpdateError) 
 # Loading config file
-with open('/Users/sachin/Downloads/config.yaml', 'r', encoding='utf-8') as file:
+with open('data/config.yaml', 'r', encoding='utf-8') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
 # Creating the authenticator object
@@ -53,7 +53,7 @@ if st.session_state["authentication_status"]:
         uploaded_file = st.file_uploader("Choose a file")
     if uploaded_file is  None:
         st.info(" Upload daily serving report through File Uploader", icon="ℹ️")
-        file_path = '/Users/sachin/Downloads/Serving_Report_7_9_2024 (2).csv'  # Replace with the correct file path
+        file_path = 'data/Serving_Report_7_9_2024 (2).csv'  # Replace with the correct file path
         df = pd.read_csv(file_path)
     else:
         st.info("Upload daily serving report through File Uploader", icon="ℹ️")
