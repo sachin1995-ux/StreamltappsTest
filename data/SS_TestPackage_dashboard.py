@@ -30,7 +30,7 @@ def login_page():
         st.error(e)
 
     if st.session_state.get("authentication_status"):
-        st.success(f'Welcome {st.session_state["name"]}, You have successfully logged in. Please navigate to the dashboard page to see the results.')
+        st.success(f'Welcome {st.session_state["name"]}!, you have successfully logged in. Please navigate to the dashboard page to see the results.')
     else:
         st.info('Please login to access the dashboard.')
 
