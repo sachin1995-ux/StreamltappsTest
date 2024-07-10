@@ -76,7 +76,7 @@ def dashboard_page():
     
     
         # Load package mapping CSV
-        package_mapping = pd.read_csv("/Users/sachin/Downloads/MonitoringDashboard_SmartSpend/SmartSpendTestPackageMapping.csv")
+        package_mapping = pd.read_csv("data/SmartSpendTestPackageMapping.csv")
         df = df.merge(package_mapping, left_on='packageId', right_on='TraditionalPackage', how='left').drop_duplicates()
     
         cols = ['Date', 'packageId','Impressions', 'Clicks', 'Completed Views','ctr', 'vcr']
