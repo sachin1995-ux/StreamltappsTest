@@ -9,15 +9,19 @@ import hashlib
 
 st.write(st.__version__)
 
+# Define page navigation using sidebar selectbox
+page = st.sidebar.selectbox("Choose a page", ["Login Page", "Register New User"])
 
-# pg = st.navigation([st.Page("data/Register New User.py"), st.Page("data/Login Page.py")])
+# Define function for each page
+def login_page():
+    st.write("This is the Login Page")
 
-pg = st.navigation(st.Page("data/Login Page.py"))
+def register_user_page():
+    st.write("This is the Register New User Page")
+    # Your registration logic here
 
-
-pg.run()
-
-import logging
-logging.error("Error information here")
-
-
+# Display pages based on user selection
+if page == "Login Page":
+    login_page()
+elif page == "Register New User":
+    register_user_page()
