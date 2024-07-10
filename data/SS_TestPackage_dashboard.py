@@ -1,6 +1,18 @@
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+import numpy as np
+import streamlit_authenticator as stauth
+import hashlib
 
+pg = st.navigation([st.Page("data/Register New User.py"), 
+    st.Page("data/Login Page.py"),
+    st.Page("data/Update User Details.py")])
+pg.run()
 
-
+"""
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -310,4 +322,4 @@ st.plotly_chart(fig, use_container_width=True)
 # Download Button
 if st.download_button('Download Data', df.to_csv(), file_name='filtered_data.csv'):
     st.success('File successfully downloaded')
-
+"""
