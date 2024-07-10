@@ -41,6 +41,7 @@ def register_user_page():
 
 # Dashboard Page
 def dashboard_page():
+    authenticator.logout()
     if st.session_state.get("authentication_status"):
         st.title("SmartSpend Campaign Monitoring Dashboard")
         uploaded_file = st.sidebar.file_uploader("Choose a file")
