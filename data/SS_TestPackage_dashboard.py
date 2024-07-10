@@ -57,7 +57,7 @@ def dashboard_page():
             file_path = 'data/Serving_Report_7_9_2024 (2).csv'  # Replace with the correct file path
             df = pd.read_csv(file_path)
         else:
-            st.info("Upload daily serving report through File Uploader", icon="ℹ️")
+            df = pd.read_csv(uploaded_file)
     
         # Convert 'Cost' and 'Revenue' to float after removing currency symbols
         df['Cost'] = df['Cost'].replace('[$,]', '', regex=True).astype(float)
