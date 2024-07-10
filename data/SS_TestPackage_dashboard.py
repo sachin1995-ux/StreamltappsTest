@@ -150,7 +150,7 @@ def dashboard_page():
                      color='Method', barmode='group',
                      title="Daily Impression Comparison",
                      # labels={"VCR": "Video Completion Rate (%)", "Date": "Date"},
-                    # color_discrete_map={'Traditional': '#ffc63e', 'SmartSpend': '#F15B29'}, # Custom colors
+                     color_discrete_map={'Traditional': '#ffc63e', 'SmartSpend': '#F15B29'}, # Custom colors
                      hover_data={"Date": "|%B %d, %Y", "Impressions": True})
     
         st.plotly_chart(fig, use_container_width=True)
@@ -166,6 +166,7 @@ def dashboard_page():
                      color='Method', barmode='group',
                      title="Daily CTR Comparison",
                      labels={"CTR": "Click Through Rate (%)", "Date": "Date"},
+                     color_discrete_map={'Traditional': '#ffc63e', 'SmartSpend': '#F15B29'},
                      hover_data={"Date": "|%B %d, %Y", "ctr": True})
     
         st.plotly_chart(fig, use_container_width=True)
@@ -184,6 +185,7 @@ def dashboard_page():
                      color='Method', barmode='group',
                      title="Daily VCR Comparison",
                      labels={"VCR": "Video Completion Rate (%)", "Date": "Date"},
+                     color_discrete_map={'Traditional': '#ffc63e', 'SmartSpend': '#F15B29'},
                      hover_data={"Date": "|%B %d, %Y", "vcr": True})
     
         st.plotly_chart(fig, use_container_width=True)
