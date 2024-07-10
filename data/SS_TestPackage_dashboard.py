@@ -10,7 +10,10 @@ import hashlib
 st.write(st.__version__)
 
 
-pg = st.navigation([st.Page("data/Register New User.py"), st.Page("data/Login Page.py")])
+# pg = st.navigation([st.Page("data/Register New User.py"), st.Page("data/Login Page.py")])
+
+pg = st.navigation(st.Page("data/Login Page.py"))
+
 
 pg.run()
 
