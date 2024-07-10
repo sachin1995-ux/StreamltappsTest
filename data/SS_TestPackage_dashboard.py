@@ -201,26 +201,26 @@ def dashboard_page():
         st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
     
     
-        st.write("###### Daily beakdown using Line Chart")
+        st.write("#### Daily beakdown using Line Chart")
     
     
-        # Create a line chart with Plotly Express
-        fig = px.line(combined_df, x='Date', y='Margin', color='Method', symbol="Method",
-                      title="Daily Margin Comparison - Line Chart",
-                      labels={"Margin": "Margin Rate (%)", "Date": "Date"},
-                      markers=True,  # Adds markers to the line chart
-                      color_discrete_map={'Traditional': '#ffc63e', 'SmartSpend': '#F15B29'})  # Custom colors
-                      # )
+        # # Create a line chart with Plotly Express
+        # fig = px.line(combined_df, x='Date', y='Margin', color='Method', symbol="Method",
+        #               title="Daily Margin Comparison - Line Chart",
+        #               labels={"Margin": "Margin Rate (%)", "Date": "Date"},
+        #               markers=True,  # Adds markers to the line chart
+        #               color_discrete_map={'Traditional': '#ffc63e', 'SmartSpend': '#F15B29'})  # Custom colors
+        #               # )
     
-        # Display the plot in Streamlit
-        st.plotly_chart(fig, use_container_width=True)
+        # # Display the plot in Streamlit
+        # st.plotly_chart(fig, use_container_width=True)
     
-        filtered_traditional_avg_margin = round((filtered_traditional['Revenue'].sum() - filtered_traditional['Cost'].sum()) / (filtered_traditional['Revenue'].sum()) * 100,2)
-        filtered_smartspend_avg_margin = round((filtered_smartspend['Revenue'].sum() - filtered_smartspend['Cost'].sum()) / (filtered_smartspend['Revenue'].sum()) * 100,2)
+        # filtered_traditional_avg_margin = round((filtered_traditional['Revenue'].sum() - filtered_traditional['Cost'].sum()) / (filtered_traditional['Revenue'].sum()) * 100,2)
+        # filtered_smartspend_avg_margin = round((filtered_smartspend['Revenue'].sum() - filtered_smartspend['Cost'].sum()) / (filtered_smartspend['Revenue'].sum()) * 100,2)
     
     
-        st.write(f"The average Margin for the selected traditional package is: {filtered_traditional_avg_margin}%")
-        st.write(f"The average Margin for the selected SmartSpend package is: {filtered_smartspend_avg_margin}%")
+        # st.write(f"The average Margin for the selected traditional package is: {filtered_traditional_avg_margin}%")
+        # st.write(f"The average Margin for the selected SmartSpend package is: {filtered_smartspend_avg_margin}%")
     
         # Create a line chart with Plotly Express
         fig = px.line(combined_df, x='Date', y='Impressions', color='Method', symbol="Method",
