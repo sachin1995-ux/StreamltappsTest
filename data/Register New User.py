@@ -19,7 +19,7 @@ from streamlit_authenticator.utilities.exceptions import (CredentialsError,
                                                           UpdateError) 
 
 # Loading config file
-with open('/Users/sachin/Downloads/config.yaml', 'r', encoding='utf-8') as file:
+with open('data/config.yaml', 'r', encoding='utf-8') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
     # Creating the authenticator object
