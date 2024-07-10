@@ -6,7 +6,6 @@ import matplotlib.dates as mdates
 import numpy as np
 import streamlit_authenticator as stauth
 import hashlib
-
 import yaml
 import streamlit as st
 from yaml.loader import SafeLoader
